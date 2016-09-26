@@ -152,18 +152,15 @@ public class Main {
 
     public static void showColumns(ArrayList<String> firstColumn , ArrayList<String> secondColumn , int maximumWidth)
     {
-        String format = "%-" + (maximumWidth+10) + "s";
-        int i = 0;
-        while(firstColumn.size() > i)
+        String format = "%-" + (maximumWidth+1) + "s";
+        while(firstColumn.size() > 0)
         {
-            System.out.printf(format , firstColumn.get(i));
-            if(secondColumn.size() > i)
+            System.out.printf(format , firstColumn.remove(0));
+            if(secondColumn.size() > 0)
             {
-                System.out.printf(format , secondColumn.get(i));
+                System.out.printf(format , secondColumn.remove(0));
                 System.out.println();
             }
-            else break;
-            i++;
         }
     }
 }
